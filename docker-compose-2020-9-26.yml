@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:13.0
+    container_name: embrace-db
+    environment:
+      POSTGRES_PASSWORD: password  # 示例密码
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq
+    container_name: embrace-mq
+    ports:
+      - '5672:5672'
+
+  app:
+    image: wangyuefei/icm-scripts-scheduler:0.1
+    container_name: embrace-icm-scheduler
+    ports:
+      - "3000:3000"
+
