@@ -1,0 +1,26 @@
+name: depoly-embrace
+
+on:
+  push:
+    branches:
+    - dev
+
+jobs:
+  path-context:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install git
+        run: |
+          git clone git@github.com:embrace-century/wpdc-2049.git
+      - name: ssh deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+          REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
+          SOURCE: "wpdc-2049/"
+          TARGET: "/home/ubuntu"
