@@ -5,3 +5,8 @@ PG_VOLUME = "~/embrace_data/pgdata"
 
 MQ_USER = "embrace"
 MQ_PASSWORD = "password"
+
+# icm-scripts-scheduler 配置文件
+PG_HOST = "embrace_db"
+PG_USER = "postgres"
+PG_PORT = "5432"

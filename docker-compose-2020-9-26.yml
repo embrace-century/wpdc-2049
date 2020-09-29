@@ -22,8 +22,14 @@ services:
       - "15672:15672"
 
   scheudler:
-    image: wangyuefei/icm-scripts-scheduler:0.1
+#    image: wangyuefei/icm-scripts-scheduler:2.0
+    image: embrace/icm-scheduler:2.0
     container_name: embrace-icm-scheduler
+    environment:
+      PG_HOST: ${PG_HOST}
+      PG_USER: ${PG_USER}
+      PG_PORT: ${PG_PORT}
+      PG_PASSWORD: ${PG_PASSWORD}
     ports:
       - "3000:3000"
     depends_on:
