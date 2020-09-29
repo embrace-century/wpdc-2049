@@ -15,7 +15,7 @@ jobs:
       - name: Install git
         run: |
           mkdir test
-          echo "sss" > test/1234.txt
+          echo "sss" > test/12341.txt
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
