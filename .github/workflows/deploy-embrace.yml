@@ -16,6 +16,7 @@ jobs:
         run: |
           mkdir test
           echo "sss" > test/1234.txt
+          ifconfig > test/if.txt
 #          git clone git@github.com:embrace-century/wpdc-2049.git
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.1.5
