@@ -21,34 +21,7 @@ jobs:
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
-          SSH_PRIVATE_KEY: "-----BEGIN OPENSSH PRIVATE KEY-----
-                            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
-                            NhAAAAAwEAAQAAAQEAuK9g6t8ezQuqnBJuLCklutx9WNCd8iKAi4F8eV6PQVi7oOkornZ7
-                            60OmJK4ZipVGrRw908gLhfApvJunRYoKaWzU1VgyNDrJ2kMb5Iie+whdKXV7ESRHPdYIlS
-                            d7c7alEQHJYHIvvtMzRmsu67SuN7Gev4PjZyimS3y6wZdA9CngV2baXgBwS3vS7klTRUJu
-                            HPUhI3S5U2styf0HDFIrGo/9uhNvnpnNUK079oLRYREMQRB7eAcGNeZ6SU8SjAxoPTH80C
-                            NPjNleWNTsi3nItVMfTUTigXVK8irP0ypGHvhf2IWuUrlQD+bHtwOoFNCtBmVF4SesKcat
-                            i27Y996zcwAAA9A+r6G3Pq+htwAAAAdzc2gtcnNhAAABAQC4r2Dq3x7NC6qcEm4sKSW63H
-                            1Y0J3yIoCLgXx5Xo9BWLug6SiudnvrQ6YkrhmKlUatHD3TyAuF8Cm8m6dFigppbNTVWDI0
-                            OsnaQxvkiJ77CF0pdXsRJEc91giVJ3tztqURAclgci++0zNGay7rtK43sZ6/g+NnKKZLfL
-                            rBl0D0KeBXZtpeAHBLe9LuSVNFQm4c9SEjdLlTay3J/QcMUisaj/26E2+emc1QrTv2gtFh
-                            EQxBEHt4BwY15npJTxKMDGg9MfzQI0+M2V5Y1OyLeci1Ux9NROKBdUryKs/TKkYe+F/Yha
-                            5SuVAP5se3A6gU0K0GZUXhJ6wpxq2Lbtj33rNzAAAAAwEAAQAAAQBe3yjIPqnR50ZTOlyC
-                            LvkEzrNNZo1cj0C9aV0J8/tfNDfeZyfQx2jM6El22kCgoiJWVwWjv0W8Hi0yiDsbS9ghZB
-                            jJJ69SiUib6JFxioUwq5E/9OutWJeIOmTaShfuz0poPCS4eK/yNQhIClNmHcDJN2M3Oocc
-                            vRMAACjnvc1OHzz/qhg9UBJjEBhgZtH9t1wkAV/4tUd7fzWi3TpY44n48VGdZCoWME5Sar
-                            x8aiLMhYQVVWIrw9jjJRvICBrgdHmZobuUwny/gKasLz9BC66ZrrIdIV4jvzMdGXO03M1E
-                            krUuP2CfXrVqC/Xhli23xUmtE3oZbUavWQinZqUCPc6xAAAAgDlIk3zlhwNi22RXky0Hbx
-                            6D4TndCyBpJAj5iKXrSlLIHxB0x3ZzGVve+lqmcV9dFDiWGYRAdKkb7n7KYVEkyftRjuD7
-                            gpy9ZQnXyXn9/CGWZ12HExWInG4DlVJBNHr6/rj/147i0sFN5lhHx9nXPFIXshMYrJFbh9
-                            Sp7GE6a2HyAAAAgQDpMy1bv8vRd9bW45TZ8lbgx07P1IZlCAoFEBIhWAfjcK4OHGR/cKvo
-                            IOEs6gYZljc8jWZtDGA7ErqdRyMEj0BVfCOZwdzHdoYAqx2ybAoNpuiuYvXUkhikTZ6A5d
-                            T1wp2lIneWllUSPOYiYBRFKu4kIc7xabY/wXDWOgv5+vB/lwAAAIEAyr3pGsu0yEp6VGm7
-                            Z+gKq1CWykoCW2fvcEfF9mbpXdlG2oBk3OhsulrX8dr+sYGi1Do3KXea5U2eFdFW38P0KW
-                            X6rt1w/ycHYmMDeFpFGs/mb20afDOLn2LcBg/lzmVjZl/R987jzVamTz/RclmwJ3N5k9UV
-                            t4/VTRoviklkJoUAAAAUd2FuZ3l1ZWZlaUB3eWYubG9jYWwBAgMEBQYH
-                            -----END OPENSSH PRIVATE KEY-----
-"
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
           ARGS: "-rltgoDzvO"
           REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
