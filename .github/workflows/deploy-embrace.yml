@@ -54,4 +54,3 @@ jobs:
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           SOURCE: "wpdc-2049/"
           TARGET: "/home/ubuntu"
-        run: chmod 600
