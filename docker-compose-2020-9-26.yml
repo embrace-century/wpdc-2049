@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  db:
+  embrace-db:
     image: postgres:13.0
     container_name: embrace-db
     environment:
@@ -15,7 +15,7 @@ services:
     ports:
       - '5672:5672'
 
-  app:
+  scheudler:
     image: wangyuefei/icm-scripts-scheduler:0.1
     container_name: embrace-icm-scheduler
     ports:
