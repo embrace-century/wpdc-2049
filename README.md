@@ -5,7 +5,7 @@
     
  2. 部署方式： 
  
-    `docker-compose -f docker-compose-2020-9-26.yml up -d`
+    `docker-compose -f docker-compose-2020-9-26.yml  --env-file embrace_config.yml up -d`
 
 ##### 我们目前使用的镜像示例如下，镜像也要打标签：
  1. rabbitmq:3.8.8-management

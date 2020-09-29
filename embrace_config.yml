@@ -1,0 +1,7 @@
+# embrace 部署配置文件, 如下为示例配置
+PG_PASSWORD = "password"
+PG_DATA = "/var/lib/postgresql/data/pgdata"
+PG_VOLUME = "~/embrace_data/pgdata"
+
+MQ_USER = "embrace"
+MQ_PASSWORD = "password"

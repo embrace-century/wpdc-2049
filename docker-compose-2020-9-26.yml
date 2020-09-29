@@ -1,23 +1,32 @@
 version: "3"
 
 services:
-  embrace-db:
+  embrace_db:
     image: postgres:13.0
-    container_name: embrace-db
+    container_name: embrace-db2
+    restart: always
+    privileged: true
     environment:
-      POSTGRES_PASSWORD: password  # 示例密码
-    ports:
-      - "5432:5432"
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      PGDATA: ${PG_DATA}
+    volumes:
+      - ${PG_VOLUME}:${PG_DATA}
 
   rabbitmq:
-    image: rabbitmq
+    image: rabbitmq:3.8.8-management
     container_name: embrace-mq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${MQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${MQ_PASSWORD}
     ports:
-      - '5672:5672'
+      - "15672:15672"
 
   scheudler:
     image: wangyuefei/icm-scripts-scheduler:0.1
     container_name: embrace-icm-scheduler
     ports:
       - "3000:3000"
+    depends_on:
+      - embrace_db
+      - rabbitmq
 

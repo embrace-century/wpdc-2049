@@ -1,27 +1,27 @@
-name: depoly-embrace
-# 测试版本
-on:
-  push:
-    branches:
-    - dev
-
-jobs:
-  path-context:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Install git
-        run: |
-          mkdir test
-          echo "sss" > test/12341.txt
-      - name: ssh deploy
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO"
-          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
-          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-          SOURCE: "wpdc-2049/"
-          TARGET: "/home/ubuntu"
+#name: depoly-embrace
+## 测试版本
+#on:
+#  push:
+#    branches:
+#    - dev
+#
+#jobs:
+#  path-context:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: Install git
+#        run: |
+#          mkdir test
+#          echo "sss" > test/12341.txt
+#      - name: ssh deploy
+#        uses: easingthemes/ssh-deploy@v2.1.5
+#        env:
+#          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+#          ARGS: "-rltgoDzvO"
+#          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+#          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+#          SOURCE: "wpdc-2049/"
+#          TARGET: "/home/ubuntu"
